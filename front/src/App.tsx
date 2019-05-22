@@ -1,27 +1,12 @@
 import React from 'react'
-import { withStyles, WithStyles, createStyles } from '@material-ui/core'
 import ListComponent from './components/List'
 
-const artists = [
-  'Gabriel',
-  'Anne'
-]
+const artists = ['0TcVnvKse98awlZxtUKIOk', '11irmEzISytQwB3G8uhC5E', '2UhA8yc1DpFfkutXq5lMah']
 
-const styles = createStyles({
-  root: {
-    width: '100%',
-    maxWidth: 360,
-    // backgroundColor: 'red'
-  },
-  inline: {
-    display: 'inline'
-  }
-})
-
-const App = (props: WithStyles<typeof styles>) => {
+const App = () => {
   return (
     <ListComponent artists={artists} />
   )
 }
 
-export default withStyles(styles)(App)
+export default App

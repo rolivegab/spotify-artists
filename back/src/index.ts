@@ -1,13 +1,19 @@
 import dotenv from 'dotenv'
 import Express from 'express'
-import Api from './api';
-import AuthenticateMiddleware from './authenticate';
-import ErrorMiddleware from './error';
+import Api from './routes/api'
+import AuthenticateMiddleware from './middlewares/authenticate'
+import ErrorMiddleware from './middlewares/error'
+import cors from 'cors'
 dotenv.config()
 
 const App = Express()
 
 App
+.use(cors({
+    origin: process.env.CLIENT_URL,
+    credentials: true
+}))
+.use(Express.json())
 .use(AuthenticateMiddleware)
 .use('/', Api)
 .use(ErrorMiddleware)

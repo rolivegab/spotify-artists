@@ -16,7 +16,7 @@ const AuthenticateMiddleware = async (req: Request, res: Response, next: NextFun
             res.locals.access_token = access_token
             return next()
         }
-        const httpResponse = await axios.post<HttpResponse>('https://accounts.spotify.com/api/token', undefined, {
+        const httpResponse = await axios.post<HttpResponse>(process.env.SPOTIFY_AUTH_URL as string, undefined, {
             params: {
                 grant_type: 'client_credentials'
             },
