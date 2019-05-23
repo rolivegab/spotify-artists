@@ -1,0 +1,12 @@
+import test from 'enzyme'
+import ListComponent from './List'
+import * as React from 'react'
+
+const state = "[{\"external_urls\":{\"spotify\":\"https://open.spotify.com/artist/0TcVnvKse98awlZxtUKIOk\"},\"followers\":{\"href\":null,\"total\":11354},\"genres\":[\"brega\",\"forro\"],\"href\":\"https://api.spotify.com/v1/artists/0TcVnvKse98awlZxtUKIOk\",\"id\":\"0TcVnvKse98awlZxtUKIOk\",\"images\":[{\"height\":640,\"url\":\"https://i.scdn.co/image/1d0ccd0c4b5ec14c2c4575fd11f365883c971b0b\",\"width\":640},{\"height\":300,\"url\":\"https://i.scdn.co/image/8759a49a86ffcc12a1401f087b2575dbac03478a\",\"width\":300},{\"height\":64,\"url\":\"https://i.scdn.co/image/6518935fed54ef347142725ab6211ce0643dba41\",\"width\":64}],\"name\":\"Alcymar Monteiro\",\"popularity\":34,\"type\":\"artist\",\"uri\":\"spotify:artist:0TcVnvKse98awlZxtUKIOk\"},{\"external_urls\":{\"spotify\":\"https://open.spotify.com/artist/11irmEzISytQwB3G8uhC5E\"},\"followers\":{\"href\":null,\"total\":4735},\"genres\":[\"rock alternativo brasileiro\"],\"href\":\"https://api.spotify.com/v1/artists/11irmEzISytQwB3G8uhC5E\",\"id\":\"11irmEzISytQwB3G8uhC5E\",\"images\":[{\"height\":640,\"url\":\"https://i.scdn.co/image/2bd23e65d7886b0c7a2c0f1e833bead8c95f0eaf\",\"width\":640},{\"height\":320,\"url\":\"https://i.scdn.co/image/9450a73f9da6f42c9df1467a3f69a96a95d9099c\",\"width\":320},{\"height\":160,\"url\":\"https://i.scdn.co/image/d143f879bc76fd31a24c99bbe6531d3431a51a79\",\"width\":160}],\"name\":\"Leela\",\"popularity\":23,\"type\":\"artist\",\"uri\":\"spotify:artist:11irmEzISytQwB3G8uhC5E\"},{\"external_urls\":{\"spotify\":\"https://open.spotify.com/artist/2UhA8yc1DpFfkutXq5lMah\"},\"followers\":{\"href\":null,\"total\":376},\"genres\":[],\"href\":\"https://api.spotify.com/v1/artists/2UhA8yc1DpFfkutXq5lMah\",\"id\":\"2UhA8yc1DpFfkutXq5lMah\",\"images\":[{\"height\":640,\"url\":\"https://i.scdn.co/image/f0b1709abd800b356d4d2daa51c61d5b714b8313\",\"width\":640},{\"height\":300,\"url\":\"https://i.scdn.co/image/de4ba0ca1018af3c3a1af99704da6ea568904c24\",\"width\":300},{\"height\":64,\"url\":\"https://i.scdn.co/image/5bb60cabea9256ab8f2068987c836c887c6d2797\",\"width\":64}],\"name\":\"Ney Alves\",\"popularity\":26,\"type\":\"artist\",\"uri\":\"spotify:artist:2UhA8yc1DpFfkutXq5lMah\"}]"
+
+describe('List Component', () => {
+    it('renders without crashes', () => {
+        const artists = ['0TcVnvKse98awlZxtUKIOk', '11irmEzISytQwB3G8uhC5E', '2UhA8yc1DpFfkutXq5lMah']
+        test.mount(<ListComponent artists={artists}/>)
+    })
+})
